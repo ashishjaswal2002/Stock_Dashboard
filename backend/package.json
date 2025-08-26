@@ -4,8 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "dev": "node server.js",
-    "vercel-build": "react-scripts build"
+    "dev": "node server.js"
   },
   "dependencies": {
     "apicache": "^1.6.3",
