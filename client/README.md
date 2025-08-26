@@ -1,53 +1,22 @@
+# Portfolio Dashboard — Client
 
-
-# Finance Portfolio Dashboard — Frontend (Client)
-
-This folder contains the React.js frontend for the Finance Portfolio Dashboard, designed to visualize real-time stock data, track portfolio performance, and present financial insights through clean and responsive UI components.
-
-
+---
 
 ##  Tech Stack
+- **React.js** —
+- **Tailwind CSS** —  
+- **Axios** —
 
-- React.js
-- Tailwind CSS
-- Axios
+---
 
+## Getting Started
 
-## Setup Instructions
+Follow the steps below to set up and run the client application locally:
 
-1. **Navigate to client folder:**
+### 1. Move into the client folder
 
-
-```bash
 cd client
-````
+npm i or npm install
+npm run dev
 
-
-3. Install dependencies:
-
-```bash
-npm install
-````
-
-
-
-3. Run the development server:
-
-```bash
-npm start
-````
-
-
-
-## Features
-
-* Dynamic portfolio view
-* Live stock updates
-* Clean charts and tables (future scope)
-* Modular React components for easy scalability
-
-
-
-## Author
- Aryan Gautam (https://github.com/aryan88111)
 

@@ -1,7 +1,5 @@
 const yahooFinance = require("yahoo-finance2").default;
-
-
-exports.retrievePriceEarningsRatio = async(symbol) => {
+exports.getPERatio = async(symbol) => {
     try {
         const quote = await yahooFinance.quoteSummary(symbol, { modules: ['defaultKeyStatistics', 'financialData'] });
         const pe = quote.defaultKeyStatistics ?.forwardPE || quote.defaultKeyStatistics ?.trailingPE;
@@ -14,7 +12,7 @@ exports.retrievePriceEarningsRatio = async(symbol) => {
 
 
 //Function of fetching earning per Share
-exports.fetchLatestEarnings = async (symbol) => {
+exports.getLatestEarnings = async (symbol) => {
   try {
     const quote = await yahooFinance.quoteSummary(symbol, {
       modules: ['defaultKeyStatistics', 'financialData']
@@ -33,7 +31,7 @@ exports.fetchLatestEarnings = async (symbol) => {
 };
 
 //fetching cmp using symobl
-exports.fetchCMP = async(symbol) => {
+exports.getCMP = async(symbol) => {
     const quote = await yahooFinance.quote(symbol);
     return quote.regularMarketPrice;
 };
