@@ -1,13 +1,16 @@
 {
-  "version": 2,
-  "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-"routes": [
-  { "src": "/api/v1/(.*)", "dest": "server.js" },
-  { "src": "/(.*)", "dest": "server.js" }
-],
-  "functions": {
-    "server.js": {
-      "runtime": "nodejs18.x"
-    }
+ "version": 2,
+ "builds": [
+  {
+   "src": "index.js",
+   "use": "@vercel/node",
+   "config": { "includeFiles": ["dist/**"] }
   }
+ ],
+ "routes": [
+  {
+   "src": "/(.*)",
+   "dest": "index.js"
+  }
+ ]
 }
