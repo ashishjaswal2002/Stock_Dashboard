@@ -17,7 +17,7 @@ const limiter = rateLimit({
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
 
 })
-
+// stale data in cache for 15 seconds.
 router.get("/", limiter, cache('15 seconds'), getAllStockData);
 
 
