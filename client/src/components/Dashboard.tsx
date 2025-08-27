@@ -31,7 +31,7 @@ interface GroupedStocks {
 }
 
 const Dashboard = () => {
-  const [stocks, setStocks] = useState<Stock[]>([]);
+  const [, setStocks] = useState<Stock[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [groupedStocks, setGroupedStocks] = useState<GroupedStocks>({});
