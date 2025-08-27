@@ -18,7 +18,7 @@ app.use("/api/v1/stocks", stockRoutes);
 
 //health check of the server
 app.get("/", (req, res) => {
-    res.status(process.env.SUCCESS).send(
+    res.status(200).send(
       `<div><p><h2>App Server is working fine on port ${PORT}</h2><p></div>`
     );
   });
