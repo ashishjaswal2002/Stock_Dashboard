@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const stockRoutes = require("./routes/stockRoutes");
-
+const errorHandler = require('./middleware/errorHandler');
+const notFound = require('./middleware/notFound');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
@@ -17,15 +18,19 @@ app.use("/api/v1/stocks", stockRoutes);
 
 //health check of the server
 app.get("/", (req, res) => {
-    res.status(200).send(
+    res.status(process.env.SUCCESS).send(
       `<div><p><h2>App Server is working fine on port ${PORT}</h2><p></div>`
     );
   });
   
+  // 404 handler for wrong req.....
+app.use(notFound);
+// for server failure...
+app.use(errorHandler);
 
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port  ${PORT}  index.js FILE`);
 });
 
 module.exports = app;

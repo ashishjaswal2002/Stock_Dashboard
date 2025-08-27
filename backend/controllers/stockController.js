@@ -1,7 +1,7 @@
 const { getCMP } = require("../services/yahooService");
 const { getPERatio, getLatestEarnings } = require("../services/yahooService");
 
-
+require('dotenv').config();
 
 exports.getAllStockData = async(req, res) => {
    
@@ -44,7 +44,10 @@ const stockMap = {
             const presentValue = cmp * stock.quantity;
             const gainLoss = (presentValue - investment);
 
+            // console.log(`STOCK CONTROLLER - stockcontroller.js file`);
+
             return {
+                
                 name: stock.name,
                 symbol,
                 purchasePrice: stock.purchasePrice,
@@ -62,6 +65,7 @@ const stockMap = {
             return {
                 name: stock.name,
                 symbol,
+                status:process.env.NOT_FOUND,
                 error: error.message || "Failed to fetch stock data"
             };
         }
