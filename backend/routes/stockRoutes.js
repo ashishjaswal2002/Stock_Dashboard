@@ -12,7 +12,7 @@ let cache = apicache.middleware;
 // a limit set so a client can req 100 req per 15 minutes.
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
-    limit: 100, // limit each IP to 100 requests per windowMs
+    limit: 500, // limit each IP to 100 requests per windowMs
     standardHeaders: 'draft-8', // draft-6: `RateLimit-*` headers; draft-7 & draft-8: combined `RateLimit` header
     message: "Too many requests from this IP, please try again after 15 minutes",// send a message to the client.
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers.

@@ -37,8 +37,8 @@ const stockMap = {
             
 
            //Current Market Price Yahoo services
-            const cmp = await getCMP(symbol); 
-            const peRatio = await getPERatio(symbol); 
+           const { CMP: cmp, peRatio } = await getCMP(symbol);
+            // const peRatio = await getPERatio(symbol); 
             const latestEarnings = await getLatestEarnings(symbol); 
             const investment = stock.purchasePrice * stock.quantity;
             const presentValue = cmp * stock.quantity;
@@ -63,9 +63,10 @@ const stockMap = {
             };
         } catch (error) {
             return {
+                
                 name: stock.name,
                 symbol,
-                status:process.env.NOT_FOUND,
+                status:404,
                 error: error.message || "Failed to fetch stock data"
             };
         }
