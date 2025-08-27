@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const stockRoutes = require("./routes/stockRoutes");
-const errorHandler = require('./middleware/errorHandler');
+
 const notFound = require('./middleware/notFound');
 require('dotenv').config();
 
@@ -25,8 +25,7 @@ app.get("/", (req, res) => {
   
   // 404 handler for wrong req.....
 app.use(notFound);
-// for server failure...
-app.use(errorHandler);
+
 
 
 app.listen(PORT, () => {
