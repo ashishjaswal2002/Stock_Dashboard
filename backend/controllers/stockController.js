@@ -73,14 +73,14 @@ const stockMap = {
     });
 
     try {
-        const allStockData = await Promise.all(stockDataPromises); // promise for promising to get all the data
+        const allStockData = await Promise.all(stockDataPromises); // promise handling for promising to get all the data
 
         // Calculate total investment for portfolio percentage
         const totalInvestment = allStockData.reduce((total, stock) => {
             return total + (stock.investment || 0);
         }, 0);
 
-        // update portfolio percentage for each stock
+        //  portfolio percentage for each stock
         allStockData.forEach(stock => {
             if (totalInvestment > 0) {
                 stock.portfolioPercentage = ((stock.investment || 0) / totalInvestment * 100).toFixed(2) + '%';
