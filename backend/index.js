@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const stockRoutes = require("./routes/stockRoutes");
 
-const notFound = require('./middleware/notFound');
+const notFound = require('./middleware/notFound.js');
 require('dotenv').config();
 
 const PORT = process.env.PORT || 5000;
