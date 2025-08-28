@@ -123,8 +123,9 @@ const Dashboard = () => {
   );
   
   if (error) return (
-    <div className="bg-red-500 text-white p-4 rounded-md shadow-md">
-      <p className="font-bold">Error:</p>
+    <div className="flex text-white p-4  justify-center  items-center">
+     
+      <p className="font-bold items-center">Error:</p>
       <p>{error}</p>
     </div>
   );

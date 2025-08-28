@@ -5,7 +5,9 @@ const yahooFinance = require("yahoo-finance2").default;
 exports.getCMP = async (symbol) => {
   const quote = await yahooFinance.quote(symbol);
   const CMP = quote.regularMarketPrice;
+   // calculate p/e ratio in quote data.
 
+   /// CMP/ eps trailing twelve months
   let peRatio;
 
   if (quote.epsTrailingTwelveMonths) {
@@ -16,26 +18,7 @@ exports.getCMP = async (symbol) => {
 
   return { CMP, peRatio };
 };
-//fetch pe ratio
-exports.getPERatio = async (symbol) => {
-  try {
-     
 
-
-    const quote = await yahooFinance.quoteSummary(symbol, {
-      modules: ["defaultKeyStatistics", "financialData"],
-    });
-    const pe =
-      quote.defaultKeyStatistics?.forwardPE ||
-      quote.defaultKeyStatistics?.trailingPE;
-   
-
-    return pe || "N/A";
-  } catch (err) {
-    console.error(`Error fetching P/E for ${symbol}:`, err.message);
-    return "N/A";
-  }
-};
 
 //Function of fetching earning per Share
 exports.getLatestEarnings = async (symbol) => {

@@ -1,5 +1,5 @@
 const { getCMP } = require("../services/yahooService");
-const { getPERatio, getLatestEarnings } = require("../services/yahooService");
+const {  getLatestEarnings } = require("../services/yahooService");
 
 require('dotenv').config();
 
@@ -37,7 +37,8 @@ const stockMap = {
             
 
            //Current Market Price Yahoo services
-           const { CMP: cmp, peRatio } = await getCMP(symbol);
+           
+           const { CMP: cmp, peRatio } = await getCMP(symbol);// calculated PE ratio along with peratio
             // const peRatio = await getPERatio(symbol); 
             const latestEarnings = await getLatestEarnings(symbol); 
             const investment = stock.purchasePrice * stock.quantity;

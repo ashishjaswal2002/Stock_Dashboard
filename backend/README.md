@@ -1,5 +1,7 @@
 
 # Portfolio Dashboard — Backend
+TECH STACK-
+Node js, express, Express Rate limiter for API, YAHOO FIN
 
 Use Case
 
@@ -13,8 +15,7 @@ API ENDPOINTS
 http://localhost:5001/ to check server health
 http://localhost:5001/api/v1/stocks to fetch data.
 
-TECH STACK-
-Node js, express, Express Rate limiter for API, YAHOO FIN
+
 
 TESTING_LINK=http://localhost:5001/api/stocks
 PROD_LINK=https://stock-dashboard-three-smoky.vercel.app/
